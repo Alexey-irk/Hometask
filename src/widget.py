@@ -1,4 +1,5 @@
-from masks import get_mask_card_number, get_mask_account
+from masks import get_mask_account, get_mask_card_number
+
 
 def mask_account_card(account_card_info: str) -> str:
     """ Принимает строку с типом и номером карты или счёта,
@@ -23,14 +24,27 @@ def mask_account_card(account_card_info: str) -> str:
 
     return f"{name} {masked}"
 
+
 print(mask_account_card("Visa Platinum 7000792289606361"))
 
+# def get_date_fast(date_str: str) -> str:
+#     """Функция, которая принимает на вход строку с датой в формате
+#     "2024-03-11T02:26:18.671407"  и возвращает строку с датой в формате
+#     "ДД.ММ.ГГГГ" ("11.03.2024")."""
+#     # Вырезаем "2024-03-11"
+#     year, month, day = date_str[:10].split("-")
+#     # Собираем в нужном порядке
+#     return f"{day}.{month}.{year}"
 
-def get_date_fast(date_str: str) -> str:
-    """Функция, которая принимает на вход строку с датой в формате
-    "2024-03-11T02:26:18.671407"  и возвращает строку с датой в формате
-    "ДД.ММ.ГГГГ" ("11.03.2024")."""
-    # Вырезаем "2024-03-11"
-    year, month, day = date_str[:10].split("-")
-    # Собираем в нужном порядке
-    return f"{day}.{month}.{year}"
+from datetime import datetime
+
+
+def get_date(date_str: str) -> str:
+        # Превращаем строку в объект datetime
+        dt = datetime.fromisoformat(date_str)
+        # Форматируем в нужный вид: ДД.ММ.ГГГГ
+        return dt.strftime("%d.%m.%Y")
+
+    # Пример использования:
+input_str = "2024-03-11T02:26:18.671407"
+print(get_date(input_str))  # 11.03.2024
