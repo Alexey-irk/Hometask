@@ -1,10 +1,12 @@
 from masks import get_mask_card_number, get_mask_account
+from datetime import datetime
+
 
 def mask_account_card(account_card_info: str) -> str:
     """ Принимает строку с типом и номером карты или счёта,
     возвращает строку с замаскированным номером. """
 
-    # Разделяем строку на части: тип (может состоять из нескольких слов) и номер
+    # Разделяем строку на части: тип (может состоять из слов) и номер
     parts = account_card_info.rsplit(maxsplit=1)
 
     if len(parts) != 2:
@@ -23,14 +25,12 @@ def mask_account_card(account_card_info: str) -> str:
 
     return f"{name} {masked}"
 
+
 print(mask_account_card("Visa Platinum 7000792289606361"))
 
 
-from datetime import datetime
-
-
 def get_date(date_string: str) -> str:
-    """Принимает строку с датой в формате ISO и возвращает дату в формате ДД.ММ.ГГГГ."""
+    """Принимает строку в формате ISO и возвращает в формате ДД.ММ.ГГГГ."""
     dt = datetime.fromisoformat(date_string)
 
     return dt.strftime("%d.%m.%Y")
