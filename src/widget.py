@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from masks import get_mask_account, get_mask_card_number
+from src.masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(account_card_info: str) -> str:
@@ -39,3 +39,4 @@ def get_date(date_string: str) -> str:
 
 input_date = "2024-03-11T02:26:18.671407"
 print(get_date(input_date))  # 11.03.2024
+
