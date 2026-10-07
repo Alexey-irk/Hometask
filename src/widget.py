@@ -39,4 +39,3 @@ def get_date(date_string: str) -> str:
 
 input_date = "2024-03-11T02:26:18.671407"
 print(get_date(input_date))  # 11.03.2024
-

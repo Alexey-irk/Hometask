@@ -15,8 +15,3 @@ def test_get_date():
                                        ("Счет 35383033474447895560", "Счет **5560")))
 def test_mask_account_card_parametrize(number, expected):
     assert mask_account_card(number) == expected
-
-
-
-
-
