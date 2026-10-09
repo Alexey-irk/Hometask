@@ -42,3 +42,15 @@ diff = true
 
 [tool.isort]
 line_length = 119
+
+```
+
+## 3. Покрытие тестами
+
+### Установка code coverage
+~~~
+poetry add --group dev pytest-cov 
+~~~
+
+### Покрытие кода составило 93%
+
