@@ -109,23 +109,7 @@ transactions = [
         "description": "Перевод со счета на счет",
         "from": "Счет 44812258784861134719",
         "to": "Счет 74489636417521191160"
-    },
-    {
-        "id": 594226727,
-        "state": "CANCELED",
-        "date": "2018-09-12T21:27:25.241689",
-        "operationAmount": {
-            "amount": "67314.70",
-            "currency": {
-                "name": "руб.",
-                "code": "RUB"
-            }
-        },
-        "description": "Перевод организации",
-        "from": "Счет 86521592468143683861",
-        "to": "Счет 12598282614791337797"
-    }
-]
+    },]
 
 descriptions = transaction_descriptions(transactions)
 
