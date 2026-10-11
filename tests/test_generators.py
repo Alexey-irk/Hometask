@@ -13,7 +13,6 @@ def test_filter_by_currency_usd(transactions):
 
 @mark.parametrize("currency, expected_ids", (("USD", [939719570, 142264268]),
                                              ("RUB", [873106923])))
-
 def test_filter_by_currency(transactions, currency, expected_ids):
     result = list(filter_by_currency(transactions, currency))
     result_ids = [t["id"] for t in result]
@@ -22,14 +21,14 @@ def test_filter_by_currency(transactions, currency, expected_ids):
 
 
 def test_five_cards_from_one():
-        result = list(card_number_generator(1, 5))
-        assert result == [
-            "0000 0000 0000 0001",
-            "0000 0000 0000 0002",
-            "0000 0000 0000 0003",
-            "0000 0000 0000 0004",
-            "0000 0000 0000 0005",
-        ]
+    result = list(card_number_generator(1, 5))
+    assert result == [
+        "0000 0000 0000 0001",
+        "0000 0000 0000 0002",
+        "0000 0000 0000 0003",
+        "0000 0000 0000 0004",
+        "0000 0000 0000 0005",
+    ]
 
 
 def test_empty_list_returns_empty_iterator():
