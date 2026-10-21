@@ -4,8 +4,8 @@ from src.masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(account_card_info: str) -> str:
-    """ Принимает строку с типом и номером карты или счёта,
-    возвращает строку с замаскированным номером. """
+    """Принимает строку с типом и номером карты или счёта,
+    возвращает строку с замаскированным номером."""
 
     # Разделяем строку на части: тип (может состоять из слов) и номер
     parts = account_card_info.rsplit(maxsplit=1)
