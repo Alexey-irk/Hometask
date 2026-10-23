@@ -1,5 +1,5 @@
 def get_mask_card_number(card_number: int) -> str:
-    """ Функция принимает на вход номер карты и возвращает ее маску."""
+    """Функция принимает на вход номер карты и возвращает ее маску."""
     card_str: str = str(card_number)
 
     if len(card_str) != 16:
@@ -16,7 +16,7 @@ print(get_mask_card_number(7000792289606361))  # 7000 79** **** 6361
 
 
 def get_mask_account(account_number: int) -> str:
-    """ Функция принимает на вход номер счета и возвращает его маску."""
+    """Функция принимает на вход номер счета и возвращает его маску."""
     account_str: str = str(account_number)
 
     if len(account_str) < 4:
