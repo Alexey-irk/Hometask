@@ -1,5 +1,6 @@
-from src.generators import filter_by_currency, transaction_descriptions, card_number_generator
 from pytest import mark
+
+from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
 
 
 def test_filter_by_currency_usd(transactions):
@@ -11,8 +12,7 @@ def test_filter_by_currency_usd(transactions):
     assert [t["id"] for t in result] == [939719570, 142264268]
 
 
-@mark.parametrize("currency, expected_ids", (("USD", [939719570, 142264268]),
-                                             ("RUB", [873106923])))
+@mark.parametrize("currency, expected_ids", (("USD", [939719570, 142264268]), ("RUB", [873106923])))
 def test_filter_by_currency(transactions, currency, expected_ids):
     result = list(filter_by_currency(transactions, currency))
     result_ids = [t["id"] for t in result]
