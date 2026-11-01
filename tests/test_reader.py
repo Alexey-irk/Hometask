@@ -37,20 +37,14 @@ def test_read_transactions_xlsx_success():
 
 
 def test_read_transactions_csv_success():
-    mock_df = pd.DataFrame([
-        {"id": 1, "amount": 100.0},
-        {"id": 2, "amount": -50.5}
-    ])
+    mock_df = pd.DataFrame([{"id": 1, "amount": 100.0}, {"id": 2, "amount": -50.5}])
 
     with patch("src.finance.reader.pd.read_csv") as mock_read_csv:
         mock_read_csv.return_value = mock_df
 
         result = read_transactions_csv("fake_path.csv")
 
-        assert result == [
-            {"id": 1, "amount": 100.0},
-            {"id": 2, "amount": -50.5}
-        ]
+        assert result == [{"id": 1, "amount": 100.0}, {"id": 2, "amount": -50.5}]
         mock_read_csv.assert_called_once_with("fake_path.csv")
 
 
@@ -60,4 +54,3 @@ def test_read_transactions_xlsx_error():
         result = read_transactions_xlsx("corrupted.xlsx")
 
         assert result == []
-
